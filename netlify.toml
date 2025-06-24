@@ -7,9 +7,13 @@
   to = "/index.html"
   status = 200
 
-# Pour Vue Router avec des routes dynamiques
-[[headers]]
+
+  [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
-    Cache-Control = "public, max-age=3600"
+    "Access-Control-Allow-Origin" = "*"
+
+    [[redirects]]
+  from = "/article/*"
+  to = "/index.html"
+  status = 200
