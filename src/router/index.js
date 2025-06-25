@@ -1,16 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-//import HomeView from '@/views/HomeView.vue';
 import ArticleView from '@/views/ArticleView.vue'
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // Modification cruciale : utilisez createWebHistory() sans argument
+  history: createWebHistory(),
   routes: [
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
     {
@@ -29,9 +27,13 @@ const router = createRouter({
       name: 'articles',
       component: ArticleView,
     },
+    // Ajoutez une route de fallback pour les 404
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/'
+    }
   ],
   scrollBehavior(to) {
-    // Comportement de défilement pour les ancres
     if (to.hash) {
       return {
         el: to.hash,
@@ -40,6 +42,12 @@ const router = createRouter({
     }
     return { top: 0 }
   },
+})
+
+// Debugging
+router.beforeEach((to, from, next) => {
+  console.log(`Navigating to: ${to.path}`)
+  next()
 })
 
 export default router
