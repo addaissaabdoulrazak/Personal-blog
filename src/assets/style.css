@@ -796,3 +796,44 @@ footer {
 .profile-image:hover {
   transform: scale(1.05);
 }
+
+/* code css */
+pre, code {
+  background: #f8f9fa;
+  color: #343a40;
+  border-left: 4px solid #2196F3; /* Bleu au lieu de vert */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+pre {
+  margin: 20px 0;
+}
+
+code {
+  padding: 3px 6px;
+  border-radius: 4px;
+
+}
+
+pre, code {
+    all: revert !important;
+    background: #2d2d2d !important;
+    color: #f8f8f2 !important;
+    /* ... autres styles ... */
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.tag {
+  background: #e0f7fa;
+  color: #00796b;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
