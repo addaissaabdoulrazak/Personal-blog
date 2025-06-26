@@ -7,8 +7,8 @@
     <div class="article-body">
       <div class="article-meta">
         <span><i class="far fa-calendar"></i> {{ article.date }}</span>
-        <span><i class="far fa-user"></i> {{ article.author }}</span>
-        <span><i class="far fa-comment"></i> 12 commentaires</span>
+        <!-- <span><i class="far fa-user"></i> {{ article.author }}</span> -->
+        <!-- <span><i class="far fa-comment"></i> 12 commentaires</span> -->
       </div>
       <h2 class="article-title">{{ article.title }}</h2>
       <p class="article-excerpt">{{ article.excerpt }}</p>

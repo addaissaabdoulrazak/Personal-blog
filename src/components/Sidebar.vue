@@ -71,7 +71,7 @@
 
     <div class="sidebar-widget">
       <h3 class="widget-title">NEWSLETTER</h3>
-      <p>Recevez les derniers articles et ressources .NET directement dans votre boîte mail.</p>
+      <p>Recevez les derniers articles et ressources .NET et Spring Boot directement dans votre boîte mail.</p>
       <form class="newsletter-form" @submit.prevent="subscribe">
         <input type="text" placeholder="Votre nom" v-model="name" />
         <input type="email" placeholder="Votre email" required v-model="email" />
