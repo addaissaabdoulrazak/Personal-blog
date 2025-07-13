@@ -22,10 +22,15 @@ const router = createRouter({
       component: ArticleView,
       props: true,
     },
+    // {
+    //   path: '/articles',
+    //   name: 'articles',
+    //   component: ArticleView,
+    // }
     {
       path: '/articles',
       name: 'articles',
-      component: ArticleView,
+      component: () => import('../views/ArticleView.vue') // Créez cette vue si nécessaire
     },
     // Ajoutez une route de fallback pour les 404
     {

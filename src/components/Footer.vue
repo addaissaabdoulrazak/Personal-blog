@@ -3,11 +3,8 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>.NET EXPERT</h3>
-          <p>
-            Le blog de référence pour les développeurs .NET / Spring Boot qui souhaitent améliorer
-            leurs compétences et adopter les meilleures pratiques.
-          </p>
+          <h3>{{ $t('blogTitle') }}</h3>
+          <p>{{ $t('blogDescription') }}</p>
           <div class="social-icons">
             <!-- <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
             <!-- <a href="#"><i class="fab fa-github"></i></a> -->
@@ -32,50 +29,30 @@
           </div>
         </div>
 
-        <div class="footer-column">
-          <h3>COMPÉTENCES CLÉS</h3>
+         <div class="footer-column">
+          <h3>{{ $t('keySkills') }}</h3>
           <ul class="footer-links">
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> C# Avancé</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> ASP.NET Core</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Architecture Microservices</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Entity Framework</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Cloud Azure</a>
-            </li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('advancedCSharp') }}</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('aspNetCore') }}</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('microservices') }}</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('entityFramework') }}</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('azureCloud') }}</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
-          <h3>PROJETS RÉCENTS</h3>
+          <h3>{{ $t('recentProjects') }}</h3>
           <ul class="footer-links">
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Système de paiement</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Plateforme e-commerce</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> API de gestion de contenu</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Application de gestion</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Outil d'analyse de données</a>
-            </li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('paymentSystem') }}</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('ecommercePlatform') }}</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('contentApi') }}</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('managementApp') }}</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('dataAnalysis') }}</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
-          <h3>CONTACT</h3>
+          <h3>{{ $t('contactTitle') }}</h3>
           <ul class="footer-links">
             <li>
               <i class="fas fa-envelope"></i>
@@ -112,13 +89,16 @@
         </div>
       </div>
 
-      <div class="copyright">
+      <!-- <div class="copyright">
         <p>
           &copy; 2023 .NET EXPERT. TOUS DROITS RÉSERVÉS. CONÇU AVEC
           <i class="fas fa-heart" style="color: var(--secondary)"></i> POUR LA COMMUNAUTÉ .NET et
           Spring Boot
         </p>
-      </div>
+      </div> -->
+    <div class="copyright">
+      {{ $t('copyright') }}
+    </div>
     </div>
   </footer>
 </template>

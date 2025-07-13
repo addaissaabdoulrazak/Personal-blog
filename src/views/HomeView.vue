@@ -2,41 +2,21 @@
   <div>
     <HeroComponent />
     <div class="container main-content">
-      <section class="articles" id="articles-section">
+      <section class="articles" id="articles-section" ref="articlesSection">
         <FeaturedArticle :article="featuredArticle" v-if="featuredArticle" />
 
         <div v-for="article in paginatedArticles" :key="article.id">
           <ArticleCard :article="article" />
         </div>
 
-        <!-- Pagination -->
-        <div class="pagination">
-          <button @click="prevPage" :disabled="currentPage === 1" class="pagination-button">
-            &laquo; Précédent
-          </button>
-
-          <button
-            v-for="page in totalPages"
-            :key="page"
-            @click="setPage(page)"
-            :class="{ active: currentPage === page }"
-            class="pagination-button"
-          >
-            {{ page }}
-          </button>
-
-          <button
-            @click="nextPage"
-            :disabled="currentPage === totalPages"
-            class="pagination-button"
-          >
-            Suivant &raquo;
-          </button>
-        </div>
+        <PaginationControls
+          :current-page="currentPage"
+          :total-pages="totalPages"
+          @page-changed="setPage"
+        />
       </section>
       <SidebarComponent />
     </div>
-    <!-- <FooterComponent /> -->
   </div>
 </template>
 
@@ -47,7 +27,8 @@ import HeroComponent from '@/components/Hero.vue'
 import FeaturedArticle from '@/components/FeaturedArticle.vue'
 import ArticleCard from '@/components/ArticleCard.vue'
 import SidebarComponent from '@/components/Sidebar.vue'
-
+import PaginationControls from '@/components/PaginationControls.vue'
+import { onMounted, ref } from 'vue';
 export default {
   name: 'HomeView',
   components: {
@@ -55,7 +36,41 @@ export default {
     FeaturedArticle,
     ArticleCard,
     SidebarComponent,
+    PaginationControls
   },
+
+    setup() {
+    const store = useArticleStore();
+    const articlesContainer = ref(null);
+
+    onMounted(() => {
+      if (store.lastViewedArticleId) {
+        scrollToLastViewedArticle();
+      }
+    });
+
+    const scrollToLastViewedArticle = () => {
+      setTimeout(() => {
+        const articleElement = document.getElementById(`article-${store.lastViewedArticleId}`);
+        if (articleElement) {
+          articleElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+
+          // Ajouter un effet visuel
+          articleElement.classList.add('highlighted');
+          setTimeout(() => {
+            articleElement.classList.remove('highlighted');
+            store.clearLastViewedArticle();
+          }, 2000);
+        }
+      }, 100);
+    };
+
+    return { articlesContainer };
+  },
+
   computed: {
     ...mapState(useArticleStore, [
       'featuredArticle',
@@ -67,39 +82,50 @@ export default {
   },
   methods: {
     ...mapActions(useArticleStore, ['setPage', 'nextPage', 'prevPage']),
+    scrollToArticles() {
+      if (this.$route.hash === '#articles-section') {
+        this.$nextTick(() => {
+          const el = document.getElementById('articles-section');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      }
+    }
   },
+  mounted() {
+    this.scrollToArticles();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  watch: {
+    $route() {
+      this.scrollToArticles();
+    },
+    watch: {
+    // Réagir au changement de langue
+    'articleStore.currentLanguage'() {
+      this.setPage(1) // Réinitialiser la pagination
+    }
+  }
+  }
 }
 </script>
-
 <style scoped>
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  gap: 0.5rem;
-}
+/* Optimisations responsive spécifiques */
+@media (max-width: 768px) {
+  .main-content {
+    gap: 20px;
+  }
 
-.pagination-button {
-  padding: 0.5rem 1rem;
-  border: 1px solid #ddd;
-  background-color: white;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s;
+  .articles {
+    margin-bottom: 30px;
+  }
 }
-
-.pagination-button:hover:not(:disabled) {
-  background-color: #f0f0f0;
-}
-
-.pagination-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.pagination-button.active {
-  background-color: #42b983;
-  color: white;
-  border-color: #42b983;
+.highlighted {
+  box-shadow: 0 0 0 3px #42b983;
+  transition: box-shadow 0.3s ease;
 }
 </style>
