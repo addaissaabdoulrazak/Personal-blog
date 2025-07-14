@@ -25,6 +25,63 @@ body {
   overflow-x: hidden;
 }
 
+/* ==================== */
+/* CORRECTIONS MOBILE */
+/* ==================== */
+
+/* Menu hamburger visible sur plus de tailles */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-dark);
+    border: var(--brutal-border);
+    padding: 8px 12px;
+    box-shadow: var(--brutal-shadow);
+    z-index: 1001; /* Garantir qu'il est au-dessus */
+  }
+
+  /* Animation améliorée */
+  nav {
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+
+  /* Garantir la visibilité sur tous les mobiles */
+  .hamburger i {
+    color: white !important;
+    font-size: 1.8rem;
+  }
+}
+
+/* Ajustement spécifique pour votre résolution 720x1600 */
+@media (max-width: 720px) {
+  .hamburger {
+    top: 15px;
+    right: 15px;
+    padding: 6px 10px;
+  }
+
+  nav ul {
+    gap: 20px !important;
+  }
+
+  nav a {
+    font-size: 1.3rem !important;
+    padding: 10px 20px !important;
+  }
+}
+
+/* ==================== */
+/* STYLES EXISTANTS (avec améliorations) */
+/* ==================== */
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -90,6 +147,7 @@ header:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* Important pour le positionnement du hamburger */
 }
 
 .logo {
@@ -1014,107 +1072,6 @@ footer {
 .pagination-btn.active {
   background: var(--secondary);
   color: var(--dark);
-}
-
-/* ======================= */
-/* CORRECTIONS POUR TOGGLE */
-/* ======================= */
-
-/* Styles pour le menu hamburger */
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.3s;
-  z-index: 1001; /* Important: doit être supérieur à nav */
-}
-
-.hamburger:hover {
-  transform: scale(1.1);
-}
-
-/* Navigation mobile */
-@media (max-width: 992px) {
-  .hamburger {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-
-  /* MODIFICATION IMPORTANTE: remplacement de left par transform */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--primary-dark);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px;
-    transform: translateX(-100%); /* Changement ici */
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Animation améliorée */
-  }
-
-  /* MODIFICATION IMPORTANTE: utilisation de transform au lieu de left */
-  nav.active {
-    transform: translateX(0); /* Changement ici */
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-  }
-
-  nav a {
-    font-size: 1.5rem;
-    padding: 12px 25px;
-    display: block;
-    text-align: center;
-  }
-
-  .header-container {
-    position: relative;
-  }
-}
-
-.language-switcher {
-  background: var(--secondary);
-  color: var(--dark);
-  padding: 8px 15px;
-  border: var(--brutal-border);
-  box-shadow: var(--brutal-shadow);
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem;
-}
-
-.language-switcher:hover {
-  background: white;
-  transform: translateY(-3px);
-}
-
-@media (max-width: 480px) {
-  nav a {
-    font-size: 1.3rem;
-    padding: 10px 20px;
-  }
-
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-
-  .language-switcher {
-    padding: 6px 12px;
-    font-size: 0.9rem;
-  }
 }
 
 /* ==================== */
