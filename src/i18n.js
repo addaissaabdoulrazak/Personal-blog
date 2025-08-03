@@ -46,7 +46,11 @@ const messages = {
     ecommercePlatform: "Plateforme e-commerce",
     contentApi: "API de gestion de contenu",
     managementApp: "Application de gestion",
-    dataAnalysis: "Outil d'analyse de données"
+    dataAnalysis: "Outil d'analyse de données",
+     // AJOUTEZ CES NOUVELLES CLÉS ICI
+    subscribeSuccess: "Merci {name} ! Confirmation envoyée à {email}",
+    invalidEmail: "Veuillez entrer un email valide",
+    subscribeError: "Erreur lors de l'inscription",
   },
   en: {
     appName: "WEB DEVELOPER",
@@ -92,7 +96,11 @@ const messages = {
     ecommercePlatform: "E-commerce platform",
     contentApi: "Content Management API",
     managementApp: "Management application",
-    dataAnalysis: "Data analysis tool"
+    dataAnalysis: "Data analysis tool",
+ // AJOUTEZ CES NOUVELLES CLÉS ICI
+    subscribeSuccess: "Thank you {name}! Confirmation sent to {email}",
+    invalidEmail: "Please enter a valid email",
+    subscribeError: "Subscription error",
   }
 }
 

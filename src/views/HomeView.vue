@@ -1,10 +1,12 @@
 <template>
   <div>
-    <HeroComponent />
+    <HeroComponent @scroll-to-articles="scrollToArticlesSection" />
     <div class="container main-content">
       <section class="articles" id="articles-section" ref="articlesSection">
-        <FeaturedArticle :article="featuredArticle" v-if="featuredArticle" />
-
+    <FeaturedArticle
+        v-if="shouldShowFeaturedArticle"
+        :article="featuredArticle"
+      />
         <div v-for="article in paginatedArticles" :key="article.id">
           <ArticleCard :article="article" />
         </div>
@@ -12,7 +14,7 @@
         <PaginationControls
           :current-page="currentPage"
           :total-pages="totalPages"
-          @page-changed="setPage"
+          @page-changed="handlePageChange"
         />
       </section>
       <SidebarComponent />
@@ -28,7 +30,9 @@ import FeaturedArticle from '@/components/FeaturedArticle.vue'
 import ArticleCard from '@/components/ArticleCard.vue'
 import SidebarComponent from '@/components/Sidebar.vue'
 import PaginationControls from '@/components/PaginationControls.vue'
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, nextTick } from 'vue'; // Ajout de nextTick
+// import { scrollToTop } from '@/utils/scroll';
+
 export default {
   name: 'HomeView',
   components: {
@@ -39,9 +43,9 @@ export default {
     PaginationControls
   },
 
-    setup() {
+  setup() {
     const store = useArticleStore();
-    const articlesContainer = ref(null);
+    const articlesSection = ref(null);
 
     onMounted(() => {
       if (store.lastViewedArticleId) {
@@ -68,7 +72,7 @@ export default {
       }, 100);
     };
 
-    return { articlesContainer };
+    return { articlesSection };
   },
 
   computed: {
@@ -78,41 +82,76 @@ export default {
       'totalPages',
       'currentPage',
       'allArticles',
+      'currentLanguage'
     ]),
+
+       shouldShowFeaturedArticle() {
+      return this.featuredArticle && this.currentPage === 1;
+    },
+
+    filteredPaginatedArticles() {
+      // Exclure l'article vedette de la liste paginée
+      return this.paginatedArticles.filter(article =>
+        this.featuredArticle ? article.id !== this.featuredArticle.id : true
+      );
+    }
   },
+
   methods: {
     ...mapActions(useArticleStore, ['setPage', 'nextPage', 'prevPage']),
-    scrollToArticles() {
-      if (this.$route.hash === '#articles-section') {
-        this.$nextTick(() => {
-          const el = document.getElementById('articles-section');
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          }
+
+    scrollToArticlesSection() {
+      if (this.$refs.articlesSection) {
+        this.$refs.articlesSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
+      }
+    },
+
+    // Méthode modifiée pour gérer le changement de page
+    async handlePageChange(newPage) {
+      // Mettre à jour la page dans le store
+      this.setPage(newPage);
+
+      // Attendre que le DOM soit mis à jour avec les nouveaux articles
+      await nextTick();
+
+      // Défiler vers le haut après un court délai pour s'assurer du rendu
+      setTimeout(() => {
+        // scrollToTop('smooth');
+        this.scrollToArticlesSection();
+      }, 100);
+    }
+  },
+
+  watch: {
+    // currentLanguage() {
+    //   this.setPage(1);
+    //   // Ajouter un défilement après changement de langue
+    //   setTimeout(() => {
+    //     scrollToTop('smooth');
+    //   }, 300);
+    // },
+
+    $route(to) {
+      if (to.hash === '#articles-section') {
+        this.scrollToArticlesSection();
       }
     }
   },
+
   mounted() {
-    this.scrollToArticles();
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-  watch: {
-    $route() {
-      this.scrollToArticles();
-    },
-    watch: {
-    // Réagir au changement de langue
-    'articleStore.currentLanguage'() {
-      this.setPage(1) // Réinitialiser la pagination
+    if (this.$route.hash === '#articles-section') {
+      // Ajouter un délai pour s'assurer que la section est rendue
+      setTimeout(() => {
+        this.scrollToArticlesSection();
+      }, 300);
     }
-  }
   }
 }
 </script>
+
 <style scoped>
 /* Optimisations responsive spécifiques */
 @media (max-width: 768px) {

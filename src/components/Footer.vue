@@ -32,22 +32,22 @@
          <div class="footer-column">
           <h3>{{ $t('keySkills') }}</h3>
           <ul class="footer-links">
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('advancedCSharp') }}</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('aspNetCore') }}</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('microservices') }}</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('entityFramework') }}</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('azureCloud') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('advancedCSharp') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('aspNetCore') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('microservices') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('entityFramework') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('azureCloud') }}</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
           <h3>{{ $t('recentProjects') }}</h3>
           <ul class="footer-links">
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('paymentSystem') }}</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('ecommercePlatform') }}</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('contentApi') }}</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('managementApp') }}</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> {{ $t('dataAnalysis') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('paymentSystem') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('ecommercePlatform') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('contentApi') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('managementApp') }}</a></li>
+            <li><a ><i class="fas fa-chevron-right"></i> {{ $t('dataAnalysis') }}</a></li>
           </ul>
         </div>
 

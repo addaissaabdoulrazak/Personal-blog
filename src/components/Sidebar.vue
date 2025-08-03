@@ -1,4 +1,5 @@
 <template>
+
   <aside class="sidebar">
     <div class="about-me">
       <h3>{{ $t('aboutMe') }}</h3>
@@ -30,25 +31,25 @@
       <h3 class="widget-title">{{ $t('categories') }}</h3>
       <ul class="categories-list">
         <li>
-          <a href="#">ASP.NET CORE <span>24</span></a>
+          <a >ASP.NET CORE <span>24</span></a>
         </li>
         <li>
-          <a href="#">C# <span>32</span></a>
+          <a >C# <span>32</span></a>
         </li>
         <li>
-          <a href="#">{{ $t('architecture') }} <span>18</span></a>
+          <a >{{ $t('architecture') }} <span>18</span></a>
         </li>
         <li>
-          <a href="#">TESTS <span>15</span></a>
+          <a >TESTS <span>15</span></a>
         </li>
         <li>
-          <a href="#">{{ $t('performance') }} <span>9</span></a>
+          <a >{{ $t('performance') }} <span>9</span></a>
         </li>
         <li>
-          <a href="#">{{ $t('security') }} <span>7</span></a>
+          <a >{{ $t('security') }} <span>7</span></a>
         </li>
         <li>
-          <a href="#">ENTITY FRAMEWORK <span>12</span></a>
+          <a >ENTITY FRAMEWORK <span>12</span></a>
         </li>
       </ul>
     </div>
@@ -69,6 +70,7 @@
 import { mapState } from 'pinia'
 import { useArticleStore } from '@/stores/articleStore'
 import profilImage from '@/assets/me.jpg'
+import { toast } from 'vue3-toastify'
 
 export default {
   name: 'SidebarComponent',
@@ -83,10 +85,34 @@ export default {
     ...mapState(useArticleStore, ['popularArticles']),
   },
   methods: {
-    subscribe() {
-      alert(this.$t('subscribeSuccess', { name: this.name, email: this.email }));
-      this.name = ''
-      this.email = ''
+    async subscribe() {
+
+      // Validation basique
+      if (!this.email || !this.email.includes('@')) {
+        toast.error(this.$t('invalidEmail'))
+        return
+      }
+
+      try {
+        // Simulation d'appel API
+        await new Promise(resolve => setTimeout(resolve, 1000))
+
+        // Notification de succès
+        toast.success(this.$t('subscribeSuccess', {
+          name: this.name || 'Visiteur',
+          email: this.email
+        }), {
+          icon: '📬', // Emoji personnalisé
+          theme: 'colored',
+          position: 'top-center'
+        })
+
+        this.name = ''
+        this.email = ''
+      }  catch {
+      // On capture l'erreur sans utiliser la variable
+      toast.error(this.$t('subscribeError'))
+    }
     },
     navigateToArticle(id) {
       this.$router.push({ name: 'article-detail', params: { id } })
@@ -96,6 +122,25 @@ export default {
 </script>
 
 <style scoped>
+/* Ajoutez ceci pour harmoniser avec les notifications */
+:deep(.vue3-toastify__toast) {
+  font-family: 'Votre police', sans-serif;
+  border-radius: 8px;
+}
+
+:deep(.vue3-toastify__toast--success) {
+  background: #41b883;
+}
+
+:deep(.vue3-toastify__toast--exit) {
+  animation: fadeOut 0.5s ease-out;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-20px); }
+}
+
 /* Optimisations responsive spécifiques */
 @media (max-width: 992px) {
   .sidebar {

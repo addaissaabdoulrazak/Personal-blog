@@ -3,7 +3,7 @@
     <button
       class="pagination-btn"
       :disabled="currentPage === 1"
-      @click="$emit('page-changed', currentPage - 1)"
+      @click="changePage(currentPage - 1)"
     >
       <i class="fas fa-chevron-left"></i>
     </button>
@@ -13,7 +13,7 @@
       :key="page"
       class="pagination-btn"
       :class="{ active: currentPage === page }"
-      @click="$emit('page-changed', page)"
+      @click="changePage(page)"
     >
       {{ page }}
     </button>
@@ -21,7 +21,7 @@
     <button
       class="pagination-btn"
       :disabled="currentPage === totalPages"
-      @click="$emit('page-changed', currentPage + 1)"
+      @click="changePage(currentPage + 1)"
     >
       <i class="fas fa-chevron-right"></i>
     </button>
@@ -42,5 +42,10 @@ export default {
     },
   },
   emits: ['page-changed'],
+  methods: {
+    changePage(page) {
+      this.$emit('page-changed', page);
+    }
+  }
 }
 </script>

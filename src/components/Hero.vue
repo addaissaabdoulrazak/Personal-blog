@@ -3,9 +3,12 @@
     <div class="container hero-content">
       <h2 class="animated-text">{{ $t('heroTitle') }}</h2>
       <p>{{ $t('heroText') }}</p>
-      <router-link to="#articles-section" class="btn" id="articles-btn">
+      <!-- <router-link to="#articles-section" class="btn" id="articles-btn">
         {{ $t('seeArticles') }}
-      </router-link>
+      </router-link> -->
+      <a href="#" class="btn" @click.prevent="scrollToArticles">
+        {{ $t('seeArticles') }}
+      </a>
 
       <div class="mouse-scroll">
         <div class="mouse">
@@ -17,26 +20,34 @@
 </template>
 
 <script>
+// export default {
+//   name: 'HeroComponent',
+//   mounted() {
+//     this.setupScrollAnimation();
+//   },
+//   methods: {
+//     setupScrollAnimation() {
+//       const articlesBtn = document.getElementById('articles-btn');
+//       if (articlesBtn) {
+//         articlesBtn.addEventListener('click', (e) => {
+//           e.preventDefault();
+//           const target = document.getElementById('articles-section');
+//           if (target) {
+//             window.scrollTo({
+//               top: target.offsetTop - 80,
+//               behavior: 'smooth'
+//             });
+//           }
+//         });
+//       }
+//     }
+//   }
+// }
 export default {
   name: 'HeroComponent',
-  mounted() {
-    this.setupScrollAnimation();
-  },
   methods: {
-    setupScrollAnimation() {
-      const articlesBtn = document.getElementById('articles-btn');
-      if (articlesBtn) {
-        articlesBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const target = document.getElementById('articles-section');
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
-        });
-      }
+    scrollToArticles() {
+      this.$emit('scroll-to-articles');
     }
   }
 }

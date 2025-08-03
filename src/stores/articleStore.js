@@ -406,7 +406,7 @@ public class GetUserQueryHandler : IRequestHandler&lt;GetUserQuery, UserDto&gt;
       id: 8,
       title: 'EF Core : Optimisation des requêtes et migrations',
       date: '2023-09-18',
-      image: 'https://images.unsplash.com/photo-1555068172-43f6d9c731b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1556155092-8707de31f9c4?q=80&w=2070&auto=format&fit=crop',
       category: 'entityframework',
       tags: ['EF Core', 'ORM', 'Performance', 'Migrations'],
       excerpt: 'Techniques avancées pour optimiser vos requêtes EF Core et gérer efficacement les migrations.',
@@ -452,7 +452,7 @@ dotnet ef migrations script</code></pre>
       id: 9,
       title: 'Microservices avec .NET et Docker',
       date: '2023-10-10',
-      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop',
       category: 'microservices',
       tags: ['Microservices', 'Docker', 'Kubernetes', 'Distributed Systems'],
       excerpt: 'Comment concevoir et déployer des microservices .NET avec Docker et Kubernetes.',
@@ -555,7 +555,7 @@ Infrastructure -&gt; Application -&gt; Domain</code></pre>
       id: 11,
       title: 'Pattern Repository avec EF Core',
       date: '2023-12-15',
-      image: 'https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'designpatterns',
       tags: ['Repository', 'EF Core', 'Unit of Work', 'Data Access'],
       excerpt: 'Implémentation moderne du pattern Repository avec Entity Framework Core.',
@@ -663,7 +663,7 @@ public class UnitOfWork : IUnitOfWork
       id: 12,
       title: 'Logging avancé avec Serilog dans .NET',
       date: '2024-01-20',
-      image: 'https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'bestpractices',
       tags: ['Logging', 'Serilog', 'Diagnostics', 'Monitoring'],
       excerpt: 'Configuration avancée de Serilog pour une journalisation efficace dans vos applications .NET.',
@@ -707,7 +707,7 @@ builder.Host.UseSerilog();</code></pre>
       id: 13,
       title: 'Validation avec FluentValidation dans ASP.NET Core',
       date: '2024-02-15',
-      image: 'https://images.unsplash.com/photo-1555068172-43f6d9c731b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'bestpractices',
       tags: ['Validation', 'FluentValidation', 'ASP.NET Core', 'Data Integrity'],
       excerpt: 'Comment implémenter une validation robuste avec FluentValidation dans vos API ASP.NET Core.',
@@ -766,7 +766,7 @@ public async Task&lt;IActionResult&gt; CreateUser([FromBody] CreateUserDto dto)
       id: 14,
       title: 'Global Exception Handling dans ASP.NET Core',
       date: '2024-03-10',
-      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'bestpractices',
       tags: ['Error Handling', 'Middleware', 'ASP.NET Core', 'Exceptions'],
       excerpt: "Comment implémenter un gestionnaire global d'exceptions pour vos applications ASP.NET Core.",
@@ -1011,7 +1011,7 @@ public class Query
       id: 18,
       title: 'CI/CD pour applications .NET avec GitHub Actions',
       date: '2024-07-15',
-      image: 'https://images.unsplash.com/photo-1555068172-43f6d9c731b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'devops',
       tags: ['CI/CD', 'GitHub Actions', 'DevOps', 'Automation'],
       excerpt: "Mise en place d'un pipeline CI/CD robuste pour vos applications .NET avec GitHub Actions.",
@@ -1706,7 +1706,7 @@ public class GetUserQueryHandler : IRequestHandler&lt;GetUserQuery, UserDto&gt;
       id: 8,
       title: 'EF Core: Query Optimization and Migrations',
       date: '2023-09-18',
-      image: 'https://images.unsplash.com/photo-1555068172-43f6d9c731b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1556155092-8707de31f9c4?q=80&w=2070&auto=format&fit=crop',
       category: 'entityframework',
       tags: ['EF Core', 'ORM', 'Performance', 'Migrations'],
       excerpt: 'Advanced techniques to optimize your EF Core queries and manage migrations effectively.',
@@ -1752,7 +1752,7 @@ dotnet ef migrations script</code></pre>
       id: 9,
       title: 'Microservices with .NET and Docker',
       date: '2023-10-10',
-      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop',
       category: 'microservices',
       tags: ['Microservices', 'Docker', 'Kubernetes', 'Distributed Systems'],
       excerpt: 'How to design and deploy .NET microservices with Docker and Kubernetes.',
@@ -1810,7 +1810,7 @@ spec:
       id: 10,
       title: 'Clean Architecture in .NET Projects',
       date: '2023-11-05',
-      image: 'https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1487611459768-bd414656ea10?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'architecture',
       tags: ['Clean Architecture', 'DDD', 'SOLID', 'Separation of Concerns'],
       excerpt: 'Practical implementation of Clean Architecture in your .NET applications.',
@@ -1855,7 +1855,7 @@ Infrastructure -&gt; Application -&gt; Domain</code></pre>
       id: 11,
       title: 'Repository Pattern with EF Core',
       date: '2023-12-15',
-      image: 'https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'designpatterns',
       tags: ['Repository', 'EF Core', 'Unit of Work', 'Data Access'],
       excerpt: 'Modern implementation of the Repository pattern with Entity Framework Core.',
@@ -1963,7 +1963,7 @@ public class UnitOfWork : IUnitOfWork
       id: 12,
       title: 'Advanced Logging with Serilog in .NET',
       date: '2024-01-20',
-      image: 'https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'bestpractices',
       tags: ['Logging', 'Serilog', 'Diagnostics', 'Monitoring'],
       excerpt: 'Advanced Serilog configuration for effective logging in your .NET applications.',
@@ -2007,7 +2007,7 @@ builder.Host.UseSerilog();</code></pre>
       id: 13,
       title: 'Validation with FluentValidation in ASP.NET Core',
       date: '2024-02-15',
-      image: 'https://images.unsplash.com/photo-1555068172-43f6d9c731b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'bestpractices',
       tags: ['Validation', 'FluentValidation', 'ASP.NET Core', 'Data Integrity'],
       excerpt: 'How to implement robust validation with FluentValidation in your ASP.NET Core APIs.',
@@ -2066,7 +2066,7 @@ public async Task&lt;IActionResult&gt; CreateUser([FromBody] CreateUserDto dto)
       id: 14,
       title: 'Global Exception Handling in ASP.NET Core',
       date: '2024-03-10',
-      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'bestpractices',
       tags: ['Error Handling', 'Middleware', 'ASP.NET Core', 'Exceptions'],
       excerpt: 'How to implement a global exception handler for your ASP.NET Core applications.',
@@ -2311,7 +2311,7 @@ public class Query
       id: 18,
       title: 'CI/CD for .NET Applications with GitHub Actions',
       date: '2024-07-15',
-      image: 'https://images.unsplash.com/photo-1555068172-43f6d9c731b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       category: 'devops',
       tags: ['CI/CD', 'GitHub Actions', 'DevOps', 'Automation'],
       excerpt: 'Setting up a robust CI/CD pipeline for your .NET applications with GitHub Actions.',
@@ -2669,6 +2669,9 @@ export const useArticleStore = defineStore('articleStore', {
     },
 
     featuredArticle() {
+
+      if (this.currentPage !== 1) return null; // Ajout de cette ligne
+
       const articles = this.articles
       if (articles.length === 0) return null
 
@@ -2703,6 +2706,8 @@ export const useArticleStore = defineStore('articleStore', {
       return [...articles]
         .filter(article => article.id !== this.featuredArticle?.id)
         .sort((a, b) => new Date(b.date) - new Date(a.date))
+
+
     },
 
     getArticleById: (state) => (id) => {
@@ -2754,8 +2759,19 @@ export const useArticleStore = defineStore('articleStore', {
 
     setLanguage(lang) {
       if (this.articlesData[lang]) {
+
+        // Sauvegarder la page actuelle AVANT le changement de langue
+        const currentPageBeforeChange = this.currentPage;
+
         this.currentLanguage = lang
-        this.currentPage = 1
+       // this.currentPage = 1
+
+       // Vérifier si la page actuelle est valide dans la nouvelle langue
+        if (currentPageBeforeChange > this.totalPages) {
+          this.currentPage = this.totalPages > 0 ? this.totalPages : 1;
+        } else {
+          this.currentPage = currentPageBeforeChange;
+        }
 
         // Sauvegarder la préférence de langue
         localStorage.setItem('preferredLanguage', lang)
