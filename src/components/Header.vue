@@ -25,10 +25,18 @@
             </router-link>
           </li>
           <li>
+          <router-link to="/projects" class="nav-link" @click="closeMenu">
+            <i class="fas fa-briefcase"></i> {{ $t('projects') }}
+          </router-link>
+        </li>
+          <li>
             <a href="mailto:addaissaabdoulrazak@gmail.com" @click="closeMenu">
               <i class="fas fa-envelope"></i> {{ $t('contact') }}
             </a>
           </li>
+            <a href="/cv_AddaIssa.pdf" download class="btn btn-cv">
+              <i class="fas fa-download"></i> {{ $t('downloadCV') }}
+            </a>
           <li>
             <button @click="changeLanguage" class="language-switcher">
               {{ currentLanguage === 'fr' ? 'EN' : 'FR' }}

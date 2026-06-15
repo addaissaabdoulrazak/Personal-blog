@@ -51,8 +51,26 @@ const messages = {
     subscribeSuccess: "Merci {name} ! Confirmation envoyée à {email}",
     invalidEmail: "Veuillez entrer un email valide",
     subscribeError: "Erreur lors de l'inscription",
+
+    //
+
+    projects: "Projets",
+'projects.title': "Mes réalisations",
+'projects.subtitle': "Découvrez les projets que j'ai construits, du SaaS aux applications métier.",
+'projects.watchDemo': "Voir la démo vidéo",
+'projects.takara.description': "Takara est une plateforme SaaS de gestion scolaire multi-établissements. J'en suis le fondateur et lead technique : architecture full-stack, développement des modules élèves, emplois du temps, notes et génération automatique des bulletins.",
+'projects.features': "Fonctionnalités clés",
+'projects.takara.feature1': "Multi-établissements / Multi-profils",
+'projects.takara.feature2': "Gestion des emplois du temps et des salles",
+'projects.takara.feature3': "Saisie des notes et calcul automatique des moyennes",
+'projects.takara.feature4': "Génération PDF des bulletins",
+'projects.takara.feature5': "Génération de cartes d'étudiant avec QR code",
+'projects.takara.feature6': "Import/Export de données (CSV/Excel)",
+'projects.takara.feature7': 'Module de facturation (frais de scolarité et inscriptions)',
+downloadCV: "Télécharger mon CV"
   },
   en: {
+    downloadCV: "Download my CV",
     appName: "WEB DEVELOPER",
     home: "Home",
     articles: "Articles",
@@ -101,6 +119,20 @@ const messages = {
     subscribeSuccess: "Thank you {name}! Confirmation sent to {email}",
     invalidEmail: "Please enter a valid email",
     subscribeError: "Subscription error",
+    // Dans l'objet 'en'
+projects: "Projects",
+'projects.title': "My projects",
+'projects.subtitle': "Discover the projects I've built, from SaaS to business applications.",
+'projects.watchDemo': "Watch demo video",
+'projects.takara.description': "Takara is a multi-school management SaaS platform. As founder and technical lead, I designed the full-stack architecture (.NET 8 + Vue.js) and developed modules for students, schedules, grades, and automatic report card generation.",
+'projects.features': "Key features",
+'projects.takara.feature1': "Multi-school / Multi-role",
+'projects.takara.feature2': "Timetable & room management",
+'projects.takara.feature3': "Grade entry and automatic average calculation",
+'projects.takara.feature4': "PDF report card generation",
+'projects.takara.feature5': "Student card generation with QR code",
+'projects.takara.feature6': "Data import/export (CSV/Excel)",
+'projects.takara.feature7': 'Billing module (tuition & enrollment fees)',
   }
 }
 

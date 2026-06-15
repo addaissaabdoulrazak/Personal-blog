@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ArticleView from '@/views/ArticleView.vue'
-
+import ArchitectureView from '../views/ArchitectureView.vue'
+// ... existing imports ...
+import ProjectsView from '../views/ProjectsView.vue'  // <-- à ajouter
 const router = createRouter({
   // Modification cruciale : utilisez createWebHistory() sans argument
   history: createWebHistory(),
@@ -32,6 +34,18 @@ const router = createRouter({
       name: 'articles',
       component: () => import('../views/ArticleView.vue') // Créez cette vue si nécessaire
     },
+    // ... existing routes ...
+    {
+      path: '/projects',
+      name: 'projects',
+      component: ProjectsView,
+    },
+    {
+      path: '/architecture/nexashop',
+      name: 'architecture',
+      component: ArchitectureView,
+    },
+    // ... fallback ...
     // Ajoutez une route de fallback pour les 404
     {
       path: '/:pathMatch(.*)*',
