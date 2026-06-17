@@ -21,7 +21,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: './', // Doit absolument être './' pour Netlify
+  base: '/', // Doit absolument être './' pour Netlify
   plugins: [vue()],
   resolve: {
     alias: {

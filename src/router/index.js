@@ -4,6 +4,7 @@ import ArticleView from '@/views/ArticleView.vue'
 import ArchitectureView from '../views/ArchitectureView.vue'
 // ... existing imports ...
 import ProjectsView from '../views/ProjectsView.vue'  // <-- à ajouter
+
 const router = createRouter({
   // Modification cruciale : utilisez createWebHistory() sans argument
   history: createWebHistory(),
